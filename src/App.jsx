@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { CartProvider } from './context/CartContext';
 import { ProductsProvider, useProducts } from './context/ProductsContext';
 import Header from './components/Header';
@@ -11,36 +11,13 @@ import CheckoutModal from './components/CheckoutModal';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 
-// ─── Inner app — needs ProductsContext ───────────────────────────────────────
 function InnerApp() {
   const { products } = useProducts();
 
-  const [search, setSearch]           = useState('');
+  const [search, setSearch]         = useState('');
   const [activeCategory, setCategory] = useState(null);
-  const [modal, setModal]             = useState(null); // null | 'cart' | 'checkout'
-
-  // Admin state
-  const [adminState, setAdminState]   = useState('idle'); // idle | login | panel
-  const logoTapsRef                   = useRef(0);
-  const logoTapTimerRef               = useRef(null);
-
-  // Open admin via URL param  ?admin
-  useEffect(() => {
-    if (new URLSearchParams(window.location.search).has('admin')) {
-      setAdminState('login');
-    }
-  }, []);
-
-  // Hidden trigger: tap the logo 5× quickly
-  const handleLogoTap = useCallback(() => {
-    logoTapsRef.current += 1;
-    clearTimeout(logoTapTimerRef.current);
-    logoTapTimerRef.current = setTimeout(() => { logoTapsRef.current = 0; }, 1500);
-    if (logoTapsRef.current >= 5) {
-      logoTapsRef.current = 0;
-      setAdminState('login');
-    }
-  }, []);
+  const [modal, setModal]           = useState(null); // null | 'cart' | 'checkout'
+  const [adminState, setAdminState] = useState('idle'); // idle | login | panel
 
   const filtered = useMemo(() => {
     let list = products;
@@ -65,7 +42,11 @@ function InnerApp() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header onLogoTap={handleLogoTap} />
+      <Header
+        adminState={adminState}
+        onAdminClick={() => setAdminState('login')}
+        onAdminLogout={() => setAdminState('idle')}
+      />
 
       {/* Sticky search + nav */}
       <div className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
@@ -89,17 +70,6 @@ function InnerApp() {
           search={search}
         />
       </main>
-
-      {/* Admin trigger — gear icon no rodapé, visível mas discreto */}
-      <footer className="text-center pb-6 pt-2">
-        <button
-          onClick={() => setAdminState('login')}
-          className="text-gray-200 hover:text-gray-400 transition text-xs select-none"
-          title="Área administrativa"
-        >
-          ⚙
-        </button>
-      </footer>
 
       {/* Cart floating bar */}
       <CartBar onOpen={() => setModal('cart')} />
@@ -136,7 +106,6 @@ function InnerApp() {
   );
 }
 
-// ─── Root ─────────────────────────────────────────────────────────────────────
 export default function App() {
   return (
     <ProductsProvider>
