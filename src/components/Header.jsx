@@ -1,8 +1,11 @@
-export default function Header() {
+export default function Header({ onLogoTap }) {
   return (
     <header className="bg-gradient-to-r from-brand-700 to-brand-600 text-white shadow-lg">
       <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-3">
-        <span className="text-3xl">🍺</span>
+        <span
+          className="text-3xl cursor-default select-none"
+          onClick={onLogoTap}
+        >🍺</span>
         <div>
           <h1 className="text-xl font-bold leading-tight tracking-tight">
             Depósito de Bebidas
