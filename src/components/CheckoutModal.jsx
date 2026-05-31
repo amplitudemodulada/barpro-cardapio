@@ -3,7 +3,11 @@ import { X, ChevronLeft, CheckCircle, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { buildWhatsAppMessage, validateForm, formatCPF, formatPhone } from '../utils/whatsapp';
 
-const PAYMENT_OPTIONS = ['Pix', 'Cartão de Crédito', 'Cartão de Débito', 'Dinheiro'];
+const PAYMENT_OPTIONS = [
+  { id: 'Pix',      label: 'Pix',     icon: '📲', desc: 'Transferência instantânea' },
+  { id: 'Cartão',   label: 'Cartão',  icon: '💳', desc: 'Crédito ou Débito' },
+  { id: 'Dinheiro', label: 'Dinheiro',icon: '💵', desc: 'Pagamento em espécie' },
+];
 
 const INITIAL_FORM = {
   nome: '', cpf: '', telefone: '', whatsapp: '',
@@ -58,11 +62,12 @@ export default function CheckoutModal({ onClose, onBack }) {
 
     const url = buildWhatsAppMessage(items, totalPrice, form);
     setSubmitted(true);
+    // Abre o WhatsApp imediatamente (dentro do mesmo gesto do usuário evita bloqueio de popup)
+    window.open(url, '_blank');
     setTimeout(() => {
-      window.open(url, '_blank');
       clearCart();
       onClose();
-    }, 1200);
+    }, 1800);
   }
 
   if (submitted) {
@@ -254,49 +259,56 @@ export default function CheckoutModal({ onClose, onBack }) {
               <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider">
                 Forma de Pagamento *
               </h3>
-              <div className="grid grid-cols-2 gap-2">
-                {PAYMENT_OPTIONS.map(opt => (
-                  <button
-                    type="button"
-                    key={opt}
-                    onClick={() => { set('pagamento', opt); set('precisaTroco', false); }}
-                    className={`py-3 rounded-xl text-sm font-semibold border-2 transition
-                      ${form.pagamento === opt
-                        ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:border-brand-300'
-                      }`}
-                  >
-                    {opt === 'Pix' && '💳 '}
-                    {opt === 'Cartão de Crédito' && '💳 '}
-                    {opt === 'Cartão de Débito' && '💳 '}
-                    {opt === 'Dinheiro' && '💵 '}
-                    {opt}
-                  </button>
-                ))}
+
+              <div className="grid grid-cols-3 gap-2">
+                {PAYMENT_OPTIONS.map(opt => {
+                  const selected = form.pagamento === opt.id;
+                  return (
+                    <button
+                      type="button"
+                      key={opt.id}
+                      onClick={() => { set('pagamento', opt.id); set('precisaTroco', false); set('troco', ''); }}
+                      className={`flex flex-col items-center gap-1.5 py-4 px-2 rounded-2xl border-2 transition-all
+                        ${selected
+                          ? 'border-brand-500 bg-brand-50 shadow-sm'
+                          : 'border-gray-200 bg-white hover:border-brand-300 hover:bg-gray-50'
+                        }`}
+                    >
+                      <span className="text-2xl">{opt.icon}</span>
+                      <span className={`text-sm font-bold ${selected ? 'text-brand-700' : 'text-gray-700'}`}>
+                        {opt.label}
+                      </span>
+                      <span className={`text-[10px] leading-tight text-center ${selected ? 'text-brand-500' : 'text-gray-400'}`}>
+                        {opt.desc}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
+
               {errors.pagamento && (
                 <p className="text-xs text-red-500">{errors.pagamento}</p>
               )}
 
               {/* Troco — só aparece quando Dinheiro */}
               {form.pagamento === 'Dinheiro' && (
-                <div className="space-y-2 pt-1">
-                  <label className="flex items-center gap-2 cursor-pointer">
+                <div className="space-y-2 pt-1 border-t border-gray-100">
+                  <label className="flex items-center gap-2 cursor-pointer pt-2">
                     <input
                       type="checkbox"
                       checked={form.precisaTroco}
-                      onChange={e => set('precisaTroco', e.target.checked)}
+                      onChange={e => { set('precisaTroco', e.target.checked); set('troco', ''); }}
                       className="w-4 h-4 accent-brand-600"
                     />
                     <span className="text-sm text-gray-700">Precisa de troco?</span>
                   </label>
                   {form.precisaTroco && (
-                    <Field label="Troco para quanto?">
+                    <Field label="Troco para quanto? (R$)">
                       <Input
                         type="text"
-                        placeholder="Ex: R$ 50,00"
+                        placeholder="Ex: 50,00"
                         value={form.troco}
-                        inputMode="numeric"
+                        inputMode="decimal"
                         onChange={e => set('troco', e.target.value)}
                       />
                     </Field>

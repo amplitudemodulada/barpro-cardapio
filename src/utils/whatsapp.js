@@ -1,5 +1,6 @@
-// Número do WhatsApp do estabelecimento (com DDI, sem + e sem espaços)
-export const WHATSAPP_NUMBER = '5521982277641';
+import { STORE_CONFIG } from '../config';
+
+const WHATSAPP_NUMBER = STORE_CONFIG.whatsapp;
 
 const fmt = (n) => n.toFixed(2).replace('.', ',');
 const line = (char = '-', len = 40) => char.repeat(len);
