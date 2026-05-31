@@ -1101,6 +1101,112 @@ export const PRODUCTS = [
     description: 'Resistente e grande — indispensável em qualquer festa.',
     price: 6.99, image: IMG('utilidades', 'Saco Lixo'),
   },
+
+  // ══════════════════════════════════════════════════════════
+  // ÁGUAS MINERAIS — VARIEDADES E TAMANHOS
+  // ══════════════════════════════════════════════════════════
+  {
+    id: 166, category: 'hidratacao', brand: 'Crystal',
+    name: 'Água Mineral Crystal s/ Gás 200ml', volume: '200ml',
+    description: 'Garrafinha individual — perfeita para bolsa ou mochila.',
+    price: 1.99, image: IMG('hidratacao', 'Crystal 200ml'),
+  },
+  {
+    id: 167, category: 'hidratacao', brand: 'Crystal',
+    name: 'Água Mineral Crystal s/ Gás 300ml', volume: '300ml',
+    description: 'Tamanho prático para consumo rápido.',
+    price: 2.49, image: IMG('hidratacao', 'Crystal 300ml'),
+  },
+  {
+    id: 168, category: 'hidratacao', brand: 'Crystal',
+    name: 'Água Mineral Crystal s/ Gás 2L', volume: '2 Litros',
+    description: 'Garrafa familiar Crystal — mais em conta por litro.',
+    price: 6.49, image: IMG('hidratacao', 'Crystal 2L'),
+  },
+  {
+    id: 169, category: 'hidratacao', brand: 'Crystal',
+    name: 'Água Mineral Crystal c/ Gás 1L', volume: '1 Litro',
+    description: 'Água com gás Crystal — borbulhante e refrescante.',
+    price: 5.49, image: IMG('hidratacao', 'Crystal Gas 1L'),
+  },
+  {
+    id: 170, category: 'hidratacao', brand: 'Minalba',
+    name: 'Água Mineral Minalba s/ Gás 500ml', volume: '500ml',
+    description: 'Nascente de Campos do Jordão — leve e de alta pureza.',
+    price: 3.49, image: IMG('hidratacao', 'Minalba 500ml'),
+  },
+  {
+    id: 171, category: 'hidratacao', brand: 'Minalba',
+    name: 'Água Mineral Minalba c/ Gás 500ml', volume: '500ml',
+    description: 'Minalba com gás natural — elegante e refrescante.',
+    price: 3.99, image: IMG('hidratacao', 'Minalba Gás'),
+  },
+  {
+    id: 172, category: 'hidratacao', brand: 'Minalba',
+    name: 'Água Mineral Minalba s/ Gás 1,5L', volume: '1,5 Litro',
+    description: 'Minalba em tamanho maior — para a família toda.',
+    price: 6.49, image: IMG('hidratacao', 'Minalba 1,5L'),
+  },
+  {
+    id: 173, category: 'hidratacao', brand: 'São Lourenço',
+    name: 'Água Mineral São Lourenço s/ Gás 500ml', volume: '500ml',
+    description: 'Da famosa estância de São Lourenço (MG) — pura e leve.',
+    price: 3.99, image: IMG('hidratacao', 'SãoLourenço'),
+  },
+  {
+    id: 174, category: 'hidratacao', brand: 'São Lourenço',
+    name: 'Água Mineral São Lourenço c/ Gás 500ml', volume: '500ml',
+    description: 'Gasosa natural de São Lourenço — clássica e elegante.',
+    price: 4.49, image: IMG('hidratacao', 'SãoLourenço G'),
+  },
+  {
+    id: 175, category: 'hidratacao', brand: 'Indaiá',
+    name: 'Água Mineral Indaiá s/ Gás 500ml', volume: '500ml',
+    description: 'Marca nordestina de tradição — fresca e purificada.',
+    price: 3.29, image: IMG('hidratacao', 'Indaiá 500ml'),
+  },
+  {
+    id: 176, category: 'hidratacao', brand: 'Indaiá',
+    name: 'Água Mineral Indaiá s/ Gás 1,5L', volume: '1,5 Litro',
+    description: 'Garrafa família Indaiá — econômica e saborosa.',
+    price: 5.99, image: IMG('hidratacao', 'Indaiá 1,5L'),
+  },
+  {
+    id: 177, category: 'hidratacao', brand: 'Ouro Fino',
+    name: 'Água Mineral Ouro Fino s/ Gás 500ml', volume: '500ml',
+    description: 'Fonte de Ouro Fino (MG) — pureza mineral e sabor suave.',
+    price: 3.29, image: IMG('hidratacao', 'Ouro Fino'),
+  },
+  {
+    id: 178, category: 'hidratacao', brand: 'Santa Bárbara',
+    name: 'Água Mineral Santa Bárbara s/ Gás 500ml', volume: '500ml',
+    description: 'Regional e fresca — qualidade garantida da nascente.',
+    price: 2.99, image: IMG('hidratacao', 'Sta Barbara'),
+  },
+  {
+    id: 179, category: 'hidratacao', brand: 'Santa Bárbara',
+    name: 'Água Mineral Santa Bárbara c/ Gás 500ml', volume: '500ml',
+    description: 'Santa Bárbara com gás — efervescente e refrescante.',
+    price: 3.49, image: IMG('hidratacao', 'StaBarbara G'),
+  },
+  {
+    id: 180, category: 'hidratacao', brand: 'Crystal',
+    name: 'Garrafão Água Mineral 10L s/ Gás', volume: '10 Litros',
+    description: 'Garrafão retornável 10L — ideal para mesa e eventos.',
+    price: 12.99, image: IMG('hidratacao', 'Garrafão 10L'),
+  },
+  {
+    id: 181, category: 'hidratacao', brand: 'Crystal',
+    name: 'Pack Água Mineral 500ml (12 un)', volume: '12 x 500ml',
+    description: 'Fardo com 12 garrafas — melhor preço por unidade.',
+    price: 27.99, image: IMG('hidratacao', 'Pack 12un'),
+  },
+  {
+    id: 182, category: 'hidratacao', brand: 'Bonafont',
+    name: 'Água Mineral Bonafont c/ Gás 500ml', volume: '500ml',
+    description: 'Bonafont gasosa — leve, com borbulhas suaves.',
+    price: 3.99, image: IMG('hidratacao', 'Bonafont Gás'),
+  },
 ];
 
 export default PRODUCTS;
