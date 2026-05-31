@@ -16,6 +16,9 @@ export const CATEGORIES = [
   { id: 'gelo',                    label: 'Gelo',                 emoji: '🧊' },
   { id: 'churrasco',               label: 'Churrasco',            emoji: '🔥' },
   { id: 'snacks',                  label: 'Snacks & Petiscos',    emoji: '🍿' },
+  { id: 'vinhos',                  label: 'Vinhos & Espumantes',  emoji: '🍷' },
+  { id: 'drinks-prontos',          label: 'Drinks Prontos',       emoji: '🍹' },
+  { id: 'utilidades',              label: 'Utilidades',           emoji: '🛒' },
 ];
 
 // Paleta de cores por categoria para os placeholders
@@ -841,6 +844,262 @@ export const PRODUCTS = [
     name: 'Chocolate Lacta ao Leite 80g', volume: '80g',
     description: 'Chocolate ao leite cremoso — o clássico Lacta.',
     price: 5.99, image: IMG('snacks', 'Chocolate Lac'),
+  },
+
+  // ══════════════════════════════════════════════════════════
+  // HIDRATAÇÃO — ÁGUAS ADICIONAIS
+  // ══════════════════════════════════════════════════════════
+  {
+    id: 126, category: 'hidratacao', brand: 'Bonafont',
+    name: 'Água Mineral Bonafont s/ Gás 500ml', volume: '500ml',
+    description: 'Água leve e pura de nascente — sem gás e sem sódio.',
+    price: 3.49, image: IMG('hidratacao', 'Bonafont 500'),
+  },
+  {
+    id: 127, category: 'hidratacao', brand: 'Bonafont',
+    name: 'Água Mineral Bonafont 1,5L', volume: '1,5 Litro',
+    description: 'Garrafa familiar Bonafont — para o dia inteiro.',
+    price: 5.49, image: IMG('hidratacao', 'Bonafont 1,5L'),
+  },
+  {
+    id: 128, category: 'hidratacao', brand: 'Evian',
+    name: 'Água Mineral Evian 330ml', volume: '330ml',
+    description: 'Água das Alpes francesas — premium e naturalmente filtrada.',
+    price: 9.99, image: IMG('hidratacao', 'Evian 330ml'),
+  },
+  {
+    id: 129, category: 'hidratacao', brand: 'Perrier',
+    name: 'Perrier c/ Gás 330ml', volume: '330ml',
+    description: 'Água mineral francesa com gás natural — elegante e refrescante.',
+    price: 11.99, image: IMG('hidratacao', 'Perrier 330ml'),
+  },
+  {
+    id: 130, category: 'hidratacao', brand: 'Santa Bárbara',
+    name: 'Água Mineral s/ Gás 5L', volume: '5 Litros',
+    description: 'Galão econômico para casa ou eventos — pura e gelada.',
+    price: 9.99, image: IMG('hidratacao', 'Água 5L'),
+  },
+  {
+    id: 131, category: 'hidratacao', brand: 'Iguaçu',
+    name: 'Galão de Água 20L', volume: '20 Litros',
+    description: 'Galão retornável 20L — ideal para festas e churrascos.',
+    price: 14.99, image: IMG('hidratacao', 'Galão 20L'),
+  },
+  {
+    id: 132, category: 'hidratacao', brand: 'Kero Coco',
+    name: 'Água de Coco Kero Coco 1L', volume: '1 Litro',
+    description: 'Água de coco 100% natural — hidratação tropical.',
+    price: 8.99, image: IMG('hidratacao', 'Kero Coco 1L'),
+  },
+  {
+    id: 133, category: 'hidratacao', brand: 'Kero Coco',
+    name: 'Água de Coco Kero Coco 200ml', volume: '200ml',
+    description: 'Caixinha de água de coco — prática para levar.',
+    price: 3.99, image: IMG('hidratacao', 'Kero Coco 200'),
+  },
+  {
+    id: 134, category: 'hidratacao', brand: 'Levité',
+    name: 'Água Saborizada Levité Limão 500ml', volume: '500ml',
+    description: 'Água saborizada com limão siciliano — zero calorias.',
+    price: 5.49, image: IMG('hidratacao', 'Levité Limão'),
+  },
+  {
+    id: 135, category: 'hidratacao', brand: 'H2OH!',
+    name: 'H2OH! Limão 500ml', volume: '500ml',
+    description: 'Água com um toque de limão — refrescante e levinha.',
+    price: 5.49, image: IMG('hidratacao', 'H2OH Limão'),
+  },
+  {
+    id: 136, category: 'hidratacao', brand: 'H2OH!',
+    name: 'H2OH! Maracujá 500ml', volume: '500ml',
+    description: 'Sabor maracujá suave — leveza tropical sem açúcar.',
+    price: 5.49, image: IMG('hidratacao', 'H2OH Maracujá'),
+  },
+
+  // ══════════════════════════════════════════════════════════
+  // VINHOS & ESPUMANTES
+  // ══════════════════════════════════════════════════════════
+  {
+    id: 137, category: 'vinhos', brand: 'Almadén',
+    name: 'Vinho Tinto Suave Almadén 1L', volume: '1 Litro',
+    description: 'Vinho tinto suave e frutado — acessível e gostoso.',
+    price: 19.99, image: IMG('vinhos', 'Almadén Tinto'),
+  },
+  {
+    id: 138, category: 'vinhos', brand: 'Almadén',
+    name: 'Vinho Branco Seco Almadén 1L', volume: '1 Litro',
+    description: 'Branco fresco e leve — ideal para peixes e aves.',
+    price: 19.99, image: IMG('vinhos', 'Almadén Bran'),
+  },
+  {
+    id: 139, category: 'vinhos', brand: 'Salton',
+    name: 'Vinho Tinto Salton Clássico 750ml', volume: '750ml',
+    description: 'Gaúcho e encorpado — notas de frutas vermelhas maduras.',
+    price: 34.99, image: IMG('vinhos', 'Salton Tinto'),
+  },
+  {
+    id: 140, category: 'vinhos', brand: 'Salton',
+    name: 'Vinho Rosé Salton 750ml', volume: '750ml',
+    description: 'Rosé seco e elegante — leve e extremamente refrescante.',
+    price: 34.99, image: IMG('vinhos', 'Salton Rosé'),
+  },
+  {
+    id: 141, category: 'vinhos', brand: 'Casillero del Diablo',
+    name: 'Vinho Tinto Casillero Cabernet 750ml', volume: '750ml',
+    description: 'Chileno premium — Cabernet Sauvignon intenso e aveludado.',
+    price: 59.99, image: IMG('vinhos', 'Casillero CB'),
+  },
+  {
+    id: 142, category: 'vinhos', brand: 'Freixenet',
+    name: 'Espumante Freixenet Cordon Negro 750ml', volume: '750ml',
+    description: 'Cava espanhol brut — elegante, borbulhante e seco.',
+    price: 69.99, image: IMG('vinhos', 'Freixenet'),
+  },
+  {
+    id: 143, category: 'vinhos', brand: 'Salton',
+    name: 'Espumante Salton Brut 750ml', volume: '750ml',
+    description: 'Espumante gaúcho — fresco, cítrico e com boa acidez.',
+    price: 44.99, image: IMG('vinhos', 'Salton Brut'),
+  },
+  {
+    id: 144, category: 'vinhos', brand: 'Chandon',
+    name: 'Espumante Chandon Brut 750ml', volume: '750ml',
+    description: 'O espumante mais icônico do Brasil — Chandon Reserve Brut.',
+    price: 79.99, image: IMG('vinhos', 'Chandon Brut'),
+  },
+  {
+    id: 145, category: 'vinhos', brand: 'Cereser',
+    name: 'Sidra Cereser Maçã 660ml', volume: '660ml',
+    description: 'Sidra de maçã gelada — levinha e festiva para qualquer ocasião.',
+    price: 12.99, image: IMG('vinhos', 'Sidra Cereser'),
+  },
+  {
+    id: 146, category: 'vinhos', brand: 'Cereser',
+    name: 'Sidra Cereser Zero 660ml', volume: '660ml',
+    description: 'Sidra zero álcool — mesmo sabor e festa para todos.',
+    price: 12.99, image: IMG('vinhos', 'Sidra Zero'),
+  },
+
+  // ══════════════════════════════════════════════════════════
+  // DRINKS PRONTOS
+  // ══════════════════════════════════════════════════════════
+  {
+    id: 147, category: 'drinks-prontos', brand: 'Skol Beats',
+    name: 'Skol Beats Senses 269ml', volume: '269ml',
+    description: 'Drink alcoólico pronto gelado — sabor explosivo e colorido.',
+    price: 6.49, image: IMG('drinks-prontos', 'Skol Beats'),
+  },
+  {
+    id: 148, category: 'drinks-prontos', brand: 'Skol Beats',
+    name: 'Skol Beats GT 500ml', volume: '500ml',
+    description: 'Beats em tamanho grande — para curtir mais.',
+    price: 9.99, image: IMG('drinks-prontos', 'Beats GT'),
+  },
+  {
+    id: 149, category: 'drinks-prontos', brand: 'Smirnoff',
+    name: 'Smirnoff Ice Limão 275ml', volume: '275ml',
+    description: 'Vodka Ice clássica com limão — fácil e refrescante.',
+    price: 7.99, image: IMG('drinks-prontos', 'Smirnoff Ice'),
+  },
+  {
+    id: 150, category: 'drinks-prontos', brand: 'Smirnoff',
+    name: 'Smirnoff Ice Tropical 275ml', volume: '275ml',
+    description: 'Versão tropical da Smirnoff Ice — maracujá e frutas.',
+    price: 7.99, image: IMG('drinks-prontos', 'Ice Tropical'),
+  },
+  {
+    id: 151, category: 'drinks-prontos', brand: "Gordon's",
+    name: "Gordon's Gin & Tônica Lata 269ml", volume: '269ml',
+    description: 'Gin tônica pronto em lata — prático e bem equilibrado.',
+    price: 8.99, image: IMG('drinks-prontos', "Gordon's GT"),
+  },
+  {
+    id: 152, category: 'drinks-prontos', brand: 'Heineken',
+    name: 'Heineken Silver 350ml', volume: 'Lata 350ml',
+    description: 'Mais leve e suave — apenas 4% de álcool, sabor premium.',
+    price: 6.99, image: IMG('drinks-prontos', 'Heineken Silv'),
+  },
+  {
+    id: 153, category: 'drinks-prontos', brand: 'Beats',
+    name: 'Beats Seltzer Maracujá 350ml', volume: '350ml',
+    description: 'Hard seltzer — álcool, água com gás e maracujá. Zero açúcar.',
+    price: 8.49, image: IMG('drinks-prontos', 'Beats Seltzer'),
+  },
+  {
+    id: 154, category: 'drinks-prontos', brand: 'Beats',
+    name: 'Beats Seltzer Limão 350ml', volume: '350ml',
+    description: 'Hard seltzer de limão — leve, refrescante e moderno.',
+    price: 8.49, image: IMG('drinks-prontos', 'Seltzer Limão'),
+  },
+
+  // ══════════════════════════════════════════════════════════
+  // UTILIDADES
+  // ══════════════════════════════════════════════════════════
+  {
+    id: 155, category: 'utilidades', brand: 'Isopor',
+    name: 'Caixa de Isopor 12L', volume: '12 Litros',
+    description: 'Isopor compacto — mantém tudo gelado por horas.',
+    price: 24.99, image: IMG('utilidades', 'Isopor 12L'),
+  },
+  {
+    id: 156, category: 'utilidades', brand: 'Isopor',
+    name: 'Caixa de Isopor 30L', volume: '30 Litros',
+    description: 'Isopor grande para churrasco e praia — cabe muito!',
+    price: 49.99, image: IMG('utilidades', 'Isopor 30L'),
+  },
+  {
+    id: 157, category: 'utilidades', brand: 'Tramontina',
+    name: 'Abridor de Garrafa/Lata', volume: 'Unidade',
+    description: 'Abridor multifuncional — abre garrafas e latas.',
+    price: 6.99, image: IMG('utilidades', 'Abridor'),
+  },
+  {
+    id: 158, category: 'utilidades', brand: 'Descartáveis',
+    name: 'Copo Descartável Plástico 200ml (50 un)', volume: '50 unidades',
+    description: 'Copos transparentes resistentes para qualquer bebida.',
+    price: 5.99, image: IMG('utilidades', 'Copo 200ml'),
+  },
+  {
+    id: 159, category: 'utilidades', brand: 'Descartáveis',
+    name: 'Copo Long Drink 300ml (25 un)', volume: '25 unidades',
+    description: 'Copo alto e elegante para drinks e caipirinhas.',
+    price: 9.99, image: IMG('utilidades', 'Copo Long'),
+  },
+  {
+    id: 160, category: 'utilidades', brand: 'Descartáveis',
+    name: 'Canudo Flexível Colorido (50 un)', volume: '50 unidades',
+    description: 'Canudos flexíveis coloridos — para drinks e sucos.',
+    price: 4.99, image: IMG('utilidades', 'Canudos'),
+  },
+  {
+    id: 161, category: 'utilidades', brand: 'Reynolds',
+    name: 'Papel Alumínio 45cm x 5m', volume: '5 metros',
+    description: 'Papel alumínio resistente — para embrulhar carnes na brasa.',
+    price: 7.99, image: IMG('utilidades', 'Papel Alumínio'),
+  },
+  {
+    id: 162, category: 'utilidades', brand: 'Hortifruti',
+    name: 'Limão Taiti (500g)', volume: '~6 unidades',
+    description: 'Limão fresco para caipirinha — compre com a cachaça!',
+    price: 4.99, image: IMG('utilidades', 'Limão Taiti'),
+  },
+  {
+    id: 163, category: 'utilidades', brand: 'União',
+    name: 'Açúcar Refinado 1kg', volume: '1kg',
+    description: 'Açúcar refinado para caipirinha e drinks artesanais.',
+    price: 5.99, image: IMG('utilidades', 'Açúcar 1kg'),
+  },
+  {
+    id: 164, category: 'utilidades', brand: 'Hortifruti',
+    name: 'Hortelã Fresca (maço)', volume: 'Maço',
+    description: 'Hortelã fresca para mojito, drinks e petiscos.',
+    price: 3.99, image: IMG('utilidades', 'Hortelã'),
+  },
+  {
+    id: 165, category: 'utilidades', brand: 'Descartáveis',
+    name: 'Saco de Lixo Preto 100L (10 un)', volume: '10 unidades',
+    description: 'Resistente e grande — indispensável em qualquer festa.',
+    price: 6.99, image: IMG('utilidades', 'Saco Lixo'),
   },
 ];
 
